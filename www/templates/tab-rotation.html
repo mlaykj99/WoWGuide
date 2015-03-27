@@ -1,7 +1,31 @@
 <ion-view view-title="Rotation">
-    <ion-content>
-        <card>
-            Rotations
-        </card>
+    <ion-content ng-controller="RotationCtrl">
+        <div class="card">
+            <div class="item item-divider">Single Target Rotation</div>
+            <div class="item item-text-wrap">
+                {{r.stRotation}}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="item item-divider">AOE Rotation</div>
+            <div class="item item-text-wrap">
+                {{r.aoeRotation}}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="item item-divider">Talents</div>
+            <div class="item item-text-wrap">
+                {{r.talentsRotation}}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="item item-divider">Effective Cooldowns</div>
+            <div class="item item-text-wrap">
+                {{r.effCooldowns}}
+            </div>
+        </div>
     </ion-content>
 </ion-view>

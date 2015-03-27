@@ -3,26 +3,33 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
-<ion-tabs class="tabs-icon-top tabs-positive">
+<ion-tabs class="tabs-icon-top tabs-dark">
 
-  <!-- Dashboard Tab -->
-  <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
-    <ion-nav-view name="tab-dash"></ion-nav-view>
+  <!-- TODO: Icons for specs and classes-->
+
+  <!-- Classes Tab -->
+  <ion-tab title="Classes" icon-off="ion-ios-ionic-outline" icon-on="ion-ionic" href="#/tab/classes">
+    <ion-nav-view name="tab-classes"></ion-nav-view>
   </ion-tab>
 
-  <!-- Chats Tab -->
-  <ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
-    <ion-nav-view name="tab-chats"></ion-nav-view>
+  <!-- Stats Tab -->
+  <ion-tab title="Stats" icon-off="ion-stats-bars" icon-on="ion-stats-bars" href="#/tab/stats">
+    <ion-nav-view name="tab-stats"></ion-nav-view>
   </ion-tab>
 
-  <!-- Account Tab -->
-  <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
-    <ion-nav-view name="tab-account"></ion-nav-view>
+  <!-- Gems Tab -->
+  <ion-tab title="Gems" icon-off="ion-ios-color-filter-outline" icon-on="ion-ios-color-filter-outline" href="#/tab/gems">
+    <ion-nav-view name="tab-gems"></ion-nav-view>
   </ion-tab>
 
-  <ion-tab title="Rotation" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/rotation">
+  <!-- Talents Tab -->
+  <ion-tab title="Talents" icon-off="ion-levels" icon-on="ion-levels" href="#/tab/talents">
+    <ion-nav-view name="tab-talents"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Rotation Tab -->
+  <ion-tab title="Rotation" icon-off="ion-load-a" icon-on="ion-load-a" href="#/tab/rotation">
     <ion-nav-view name="tab-rotation"></ion-nav-view>
   </ion-tab>
-
 
 </ion-tabs>

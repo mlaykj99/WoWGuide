@@ -38,41 +38,32 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.stats', {
+    url: '/stats',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-stats': {
+        templateUrl: 'templates/tab-stats.html',
+        controller: 'StatsCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.gems', {
+      url: '/gems',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'tab-gems': {
+          templateUrl: 'templates/tab-gems.html',
+          controller: 'GemsCtrl'
         }
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.talents', {
+    url: '/talents',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-talents': {
+        templateUrl: 'templates/tab-talents.html',
+        controller: 'TalentsCtrl'
       }
     }
   })
@@ -85,9 +76,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'RotationCtrl'
       }
     }
+  })
+
+  .state('tab.classes', {
+    url: '/classes',
+      views:{
+        'tab-classes': {
+          templateUrl: 'templates/tab-classes.html',
+          controllers: 'ClassesCtrl'
+        }
+      }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/classes');
 
 });
