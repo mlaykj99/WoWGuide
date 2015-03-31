@@ -1,23 +1,42 @@
 <ion-view view-title="Talents & Glyphs">
-  <ion-content ng-controller="TalentsCtrl">
+  <ion-content class="padding" ng-controller="TalentsCtrl">
+    <div class="h3 text-center">
+      Talents
+    </div>
     <div class="card">
-      <div class="item item-divider">Talents</div>
-      <div class="item item-text-wrap">
-        {{t.talents}}
+      <div ng-repeat="x in t.talents">
+        <ion-item class="item-text-wrap"  ng-click="toggleGroup(x)" ng-class="{active: isGroupShown(x)}">
+          <i class="icon" ng-class="isGroupShown(t.talents) ? 'ion-minus' : 'ion-plus'"></i>
+          &nbsp;
+          <i class="{{x[0]}}"></i> {{x[1]}}
+        </ion-item>
+        <ion-item class="item-text-wrap item-accordion" ng-show="isGroupShown(x)">
+          {{x[2]}}
+        </ion-item>
       </div>
     </div>
 
-    <div class="card">
-      <div class="item item-divider">Major Glyphs</div>
+    <div class="h3 text-center">
+      Major Glyphs
+    </div>
+    <div class="card" ng-repeat="x in t.majorGlyphs">
+      <div class="item item-divider item-dark">
+        <i class="{{x[0]}}"></i> {{x[1]}}
+      </div>
       <div class="item item-text-wrap">
-        {{t.majorGlyphs}}
+        {{x[2]}}
       </div>
     </div>
 
-    <div class="card">
-      <div class="item item-divider">Minor Glyphs</div>
+    <div class="h3 text-center">
+      Minor Glyphs
+    </div>
+    <div class="card" ng-repeat="x in t.minorGlyphs">
+      <div class="item item-divider item-dark">
+        <i class="{{x[0]}}"></i> {{x[1]}}
+      </div>
       <div class="item item-text-wrap">
-        {{t.minorGlyphs}}
+        {{x[2]}}
       </div>
     </div>
   </ion-content>

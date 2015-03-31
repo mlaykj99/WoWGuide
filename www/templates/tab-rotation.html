@@ -1,30 +1,66 @@
 <ion-view view-title="Rotation">
-    <ion-content ng-controller="RotationCtrl">
+    <ion-content class="padding" ng-controller="RotationCtrl">
+        <div class="h3 text-center">
+            Single Target Rotation
+        </div>
         <div class="card">
-            <div class="item item-divider">Single Target Rotation</div>
-            <div class="item item-text-wrap">
-                {{r.stRotation}}
+            <div class="item item-divider item-dark">General</div>
+            <div class="item item-text-wrap" ng-repeat="x in r.stRotation[0]">
+                {{x}}
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-divider item-dark" ng-click="toggleGroup(r.stRotation[1])"
+                                          ng-class="{active: isGroupShown(r.stRotation[1])}">
+                <i class="icon" ng-class="isGroupShown(r.stRotation[1]) ? 'ion-minus' : 'ion-plus'"></i>
+                &nbsp;
+                In-Depth</div> <!--TODO: Accordion this-->
+            <div class="item item-text-wrap item-accordion" ng-repeat="x in r.stRotation[1]" ng-show="isGroupShown(r.stRotation[1])">
+                {{x}}
             </div>
         </div>
 
+        <div class="h3 text-center">
+            AOE Rotation
+        </div>
         <div class="card">
-            <div class="item item-divider">AOE Rotation</div>
-            <div class="item item-text-wrap">
-                {{r.aoeRotation}}
+            <div class="item item-divider item-dark">General</div>
+            <div class="item item-text-wrap" ng-repeat="x in r.aoeRotation[0]">
+                {{x}}
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-divider item-dark" ng-click="toggleGroup(r.aoeRotation[1])"
+                                           ng-class="{active: isGroupShown(r.aoeRotation[1])}">
+                <i class="icon" ng-class="isGroupShown(r.aoeRotation[1]) ? 'ion-minus' : 'ion-plus'"></i>
+                &nbsp;
+                In-Depth</div> <!--TODO: Accordion this-->
+            <div class="item item-text-wrap item-accordion" ng-repeat="x in r.aoeRotation[1]" ng-show="isGroupShown(r.aoeRotation[1])">
+                {{x}}
             </div>
         </div>
 
-        <div class="card">
-            <div class="item item-divider">Talents</div>
+        <div class="h3 text-center">
+            Talents
+        </div>
+        <div class="card" ng-repeat="x in r.talentsRotation">
+            <div class="item item-divider item-dark">
+                <i class="{{x[0]}}"></i> {{x[1]}}
+            </div>
             <div class="item item-text-wrap">
-                {{r.talentsRotation}}
+                {{x[2]}}
             </div>
         </div>
 
-        <div class="card">
-            <div class="item item-divider">Effective Cooldowns</div>
+        <div class="h3 text-center">
+            Effective Cooldowns
+        </div>
+        <div class="card" ng-repeat="x in r.effCooldowns">
+            <div class="item item-divider item-dark">
+                <i class="{{x[0]}}"></i> {{x[1]}}
+            </div>
             <div class="item item-text-wrap">
-                {{r.effCooldowns}}
+                {{x[2]}}
             </div>
         </div>
     </ion-content>

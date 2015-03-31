@@ -1,16 +1,23 @@
 <ion-view view-title="Gems & Enchants">
-  <ion-content ng-controller="GemsCtrl">
+  <ion-content class="padding" ng-controller="GemsCtrl">
+
+    <div class="h3 text-center">Gems</div>
     <div class="card">
-      <div class="item item-divider">Gems</div>
-      <div class="item item-text-wrap">
-        {{g.gems}}
+      <div class="item item-divider item-dark">
+        <i class="{{g.gems[0]}}"></i>
+        {{g.gems[1]}}
       </div>
+      <div class="item item-text-wrap">{{g.gems[2]}}</div>
     </div>
 
-    <div class="card">
-      <div class="item item-divider">Enchants</div>
+    <div class="h3 text-center">Enchants</div>
+    <div class="card" ng-repeat="x in g.enchants">
+      <div class="item item-divider item-dark">
+        <i class="{{x[0]}}"></i>
+        {{x[1]}} - {{x[2]}}
+      </div>
       <div class="item item-text-wrap">
-        {{g.enchants}}
+        {{x[3]}}
       </div>
     </div>
   </ion-content>

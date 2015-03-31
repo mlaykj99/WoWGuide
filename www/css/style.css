@@ -1,5 +1,7 @@
-/* Empty. Add your own CSS if you like */
+/*ion-view { background: url('../img/background.png') no-repeat center !important; }*/
+ion-tab { background-color: #222222 !important; }
 
+/* --- For dropdowns --- */
 .list .item.item-accordion {
     line-height: 38px;
     padding-top: 0;
@@ -13,3 +15,5 @@
 .list .item.item-accordion.ng-hide-remove {
     display: block !important;
 }
+
+.button-color { background-color: #222222 !important; }

@@ -1,10 +1,10 @@
 angular.module('starter.controllers', [])
 
-.controller('StatsCtrl', function($scope) {
+.controller('StatsCtrl', function($scope, $sce) {
   $scope.s = {
     statPriority: getStatPriority(),
     statSummaries: getStatSummary()
-  }
+  };
 })
 
 .controller('GemsCtrl', function($scope) {
@@ -20,6 +20,17 @@ angular.module('starter.controllers', [])
     majorGlyphs: getMajorGlyphs(),
     minorGlyphs: getMinorGlyphs()
   }
+
+  $scope.toggleGroup = function(group) {
+    if ($scope.isGroupShown(group)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = group;
+    }
+  };
+  $scope.isGroupShown = function(group) {
+    return $scope.shownGroup === group;
+  };
 })
 
 .controller('RotationCtrl', function($scope) {
@@ -29,9 +40,20 @@ angular.module('starter.controllers', [])
     talentsRotation: getTalentAbilities(),
     effCooldowns: getCooldowns()
   }
+
+  $scope.toggleGroup = function(r) {
+    if ($scope.isGroupShown(r)) {
+      $scope.shownGroup = null;
+    } else {
+      $scope.shownGroup = r;
+    }
+  };
+  $scope.isGroupShown = function(r) {
+    return $scope.shownGroup === r;
+  };
 })
 
-.controller('ClassesCtrl', function($scope) {
+.controller('ClassesCtrl', function($scope, $state) {
   $scope.groups = [
     {name: "Death Knight", items: ["Blood","Frost","Unholy"]},
     {name: "Druid", items: ["Balance","Feral","Guardian","Restoration"]},
@@ -71,9 +93,8 @@ angular.module('starter.controllers', [])
     //set class info
     setClassInfo(group.name, item, getGameType());
 
-    //TODO: inject $state service to controller
     //go to stats page
-    //$state.go('templates/tab-stats.html');
+    $state.go('tab.stats');
   };
 
   /* Sets the game type to be used */
